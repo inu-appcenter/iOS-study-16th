@@ -61,7 +61,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="aIo-MT-IPj" kind="show" id="S76-da-DJw"/>
+                                    <segue destination="aIo-MT-IPj" kind="show" identifier="SecondVC" id="S76-da-DJw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,6 +73,8 @@
                         <outlet property="bmiheight" destination="1Jo-fg-UFu" id="P0m-cA-1KP"/>
                         <outlet property="bmititle" destination="afG-SY-SuD" id="TWw-NT-HXy"/>
                         <outlet property="bmiweight" destination="tFh-Hp-xNG" id="S6h-nE-jVo"/>
+                        <outlet property="heighttxt" destination="pby-Av-fbN" id="pF0-uZ-EYz"/>
+                        <outlet property="weighttxt" destination="75J-si-47h" id="joC-0A-Iz7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

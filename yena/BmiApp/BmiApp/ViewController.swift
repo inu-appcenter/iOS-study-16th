@@ -37,6 +37,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             secondVC.modalPresentationStyle = .fullScreen
             
             // 다음화면으로 데이터 전달
+            print("test")
+            print(bmi)
             if let bmiResult = bmi {
                 secondVC.bmi = String(bmiResult)
             }
@@ -48,10 +50,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //            weighttxt.text = ""
     }
     
-    func calculBmi(){
-        if let hValue = heighttxt.text), let wValue = (weighttxt.text) {
-            
-        }
+    func calculBmi() {
+//        if let hValue = heighttxt.text), let wValue = (weighttxt.text) {
+//            
+//        }
         
         let height = Double(heighttxt.text!)! // 입력받은 텍스트를 double로 변환
         let weight = Double(weighttxt.text!)!
