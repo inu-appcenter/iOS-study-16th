@@ -9,11 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
     // 아웃렛 변수 : 객체에 연결하여 접근할 수 있는 변수
     @IBOutlet weak var height_txt: UITextField!
     
@@ -21,6 +16,15 @@ class ViewController: UIViewController {
     
     var bmi: String?
     var status: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        height_txt.placeholder = "cm 단위로 작성해주세요"
+        weight_txt.placeholder = "kg 단위로 작성해주세요"
+        
+    }
+
+    
  
     //BMI 계산 함수
     func calc(w: UITextField, h: UITextField){

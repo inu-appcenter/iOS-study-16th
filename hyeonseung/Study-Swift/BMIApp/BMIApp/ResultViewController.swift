@@ -27,15 +27,16 @@ class ResultViewController : UIViewController{
         
         if let bmi = bmi {
             bmiLbl.text = bmi
-            bmiLbl.sizeToFit()
+        //    bmiLbl.sizeToFit()
         }
         
         guard let status = status else {return}
         statusLbl.text =  "\(status)입니다"
         statusLbl.textAlignment = .center
         statusLbl.center = self.view.center
-        statusLbl.sizeToFit()
-        statusLbl.layer.cornerRadius = 30
+     //   statusLbl.sizeToFit()
+        statusLbl.layer.cornerRadius = 10
+        statusLbl.clipsToBounds = true
         
         if status == "비만" {
             statusLbl.backgroundColor = UIColor.red
