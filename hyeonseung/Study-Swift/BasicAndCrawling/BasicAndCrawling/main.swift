@@ -9,6 +9,7 @@ import Foundation
 import SwiftSoup
 import SwiftUI
 
+
 var webCrawlingPractice: InputQuery = InputQuery()
 
 webCrawlingPractice.inputQuery()
