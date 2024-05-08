@@ -43,6 +43,7 @@
 		8B764D6A2BEBF1FF00DB6352 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		8B764D6B2BEBF1FF00DB6352 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		8B764D6E2BEC0E0A00DB6352 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8B764D702BEC278100DB6352 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8BEA87AD2BE9CD3100620554 /* MoviceChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviceChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEA87B02BE9CD3100620554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BEA87B22BE9CD3100620554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		8BEA87A42BE9CD3100620554 = {
 			isa = PBXGroup;
 			children = (
+				8B764D702BEC278100DB6352 /* README.md */,
 				8BEA87AF2BE9CD3100620554 /* MoviceChart */,
 				8BEA87C62BE9CD3400620554 /* MoviceChartTests */,
 				8BEA87D02BE9CD3400620554 /* MoviceChartUITests */,
