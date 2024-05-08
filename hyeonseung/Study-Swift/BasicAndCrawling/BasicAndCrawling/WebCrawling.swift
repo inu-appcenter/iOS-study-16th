@@ -24,7 +24,7 @@ class CrawlingByQuery {
          
             let count = min(links.count, titles.count, titles.count)
         
-            
+            // safe indexing
             for i in 0..<count{
                 let link = try links[i].text()
                 let title = try titles[i].text()
