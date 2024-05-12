@@ -14,16 +14,16 @@ class DetailViewController: UIViewController{
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieContent: UILabel!
     
-    var _image: UIImage?
-    var _title: String?
-    var _content: String?
+    var selectImage: UIImage?
+    var selectTitle: String?
+    var selectContent: String?
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        movieImage.image = _image
-        movieTitle.text = _title
-        movieContent.text = _content
+        movieImage.image = selectImage
+        movieTitle.text = selectTitle
+        movieContent.text = selectContent
     }
 }
 

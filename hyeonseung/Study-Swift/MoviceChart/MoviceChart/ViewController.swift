@@ -61,12 +61,31 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
 
-      
+    // 셀의 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     
     }
- 
+    
+    // push 전달
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController")
+                as? DetailViewController else {return}
+        
+        if let selectedIndex =
+            self.tableView.indexPathForSelectedRow?.section {
+                let selectMovie = movieList[selectedIndex]
+                detailVC.selectImage = selectMovie.movieImage
+                detailVC.selectTitle = selectMovie.title
+                detailVC.selectContent = selectMovie.content
+        }
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    
+    // segue 전달
+    /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         performSegue(withIdentifier: "ItemDetailView", sender: nil)
     }
@@ -85,5 +104,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
                 
             }
         }
-    }
+    }*/
+    
 }
