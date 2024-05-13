@@ -11,28 +11,33 @@ class ViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     
-    let movieList = Movie.data
-    let cellName = "MovieCell"
-    let cellReuseIdentifier = "MovieCell"
+    private let movieList = Movie.data
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Movies loaded: \(movieList.count)")
         registerXib()
         
-        tableView!.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
         
        
-   
     }
 
     // xib Cell 파일 등록
     private func registerXib() {
-        let nibName = UINib(nibName: cellName, bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: cellReuseIdentifier)
+        let nibName = UINib(nibName: MovieCell.identifier, bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: MovieCell.identifier)
     }
   
+}
+
+extension UITableViewCell {
+    static var identifier: String {
+        return String(describing: self)
+    }
 }
 
 
@@ -50,7 +55,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     
     // 필수 요구 메서드 : 해당위치에 나타날 셀을 반환
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! MovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.identifier, for: indexPath) as! MovieCell
       
         let target = movieList[indexPath.section]
         cell.movieImage?.image = target.movieImage
@@ -75,9 +80,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         if let selectedIndex =
             self.tableView.indexPathForSelectedRow?.section {
                 let selectMovie = movieList[selectedIndex]
-                detailVC.selectImage = selectMovie.movieImage
-                detailVC.selectTitle = selectMovie.title
-                detailVC.selectContent = selectMovie.content
+                detailVC.movieInfo?.selectImage = selectMovie.movieImage
+                detailVC.movieInfo?.selectTitle = selectMovie.title
+                detailVC.movieInfo?.selectContent = selectMovie.content
         }
         
         self.navigationController?.pushViewController(detailVC, animated: true)

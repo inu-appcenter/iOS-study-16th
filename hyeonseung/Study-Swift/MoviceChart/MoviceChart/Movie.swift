@@ -17,6 +17,7 @@ struct Movie{
     }
 }
 
+// 심화 -> 싱글톤 객체로 생성해서 한번만 만들기
 extension Movie{
     static var data: [Movie] = [
         Movie(imageName: "batman",

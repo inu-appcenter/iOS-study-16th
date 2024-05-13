@@ -8,22 +8,28 @@
 import Foundation
 import UIKit
 
-class DetailViewController: UIViewController{
+struct MovieInfo {
+    var selectImage: UIImage?
+    var selectTitle: String?
+    var selectContent: String?
+}
+
+final class DetailViewController: UIViewController{
     
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieContent: UILabel!
     
-    var selectImage: UIImage?
-    var selectTitle: String?
-    var selectContent: String?
+    var movieInfo: MovieInfo?
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        movieImage.image = selectImage
-        movieTitle.text = selectTitle
-        movieContent.text = selectContent
+        if let info = movieInfo {
+            movieImage.image = info.selectImage
+            movieTitle.text = info.selectTitle
+            movieContent.text = info.selectContent
+        }
     }
 }
 
