@@ -77,13 +77,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController")
                 as? DetailViewController else {return}
         
-        if let selectedIndex =
-            self.tableView.indexPathForSelectedRow?.section {
-                let selectMovie = movieList[selectedIndex]
-                detailVC.movieInfo?.selectImage = selectMovie.movieImage
-                detailVC.movieInfo?.selectTitle = selectMovie.title
-                detailVC.movieInfo?.selectContent = selectMovie.content
-        }
+        let selectedMovie = movieList[indexPath.section]
+        detailVC.movieInfo = MovieInfo(selectImage: selectedMovie.movieImage, selectTitle: selectedMovie.title, selectContent: selectedMovie.content)
+    
         
         self.navigationController?.pushViewController(detailVC, animated: true)
     }

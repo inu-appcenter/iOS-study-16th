@@ -52,18 +52,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jKi-P5-zPE">
                                 <rect key="frame" x="76" y="166" width="240" height="271"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-NS-GSi">
-                                <rect key="frame" x="77" y="578" width="239" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlR-hP-98w">
+                                <rect key="frame" x="70" y="478" width="253" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-NS-GSi">
+                                <rect key="frame" x="70" y="558" width="253" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="gcb-Nx-w9t"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlR-hP-98w">
-                                <rect key="frame" x="70" y="478" width="253" height="26.333333333333314"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -72,12 +72,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WlR-hP-98w" firstAttribute="leading" secondItem="WwS-K6-eow" secondAttribute="leading" constant="70" id="7EG-l4-drl"/>
-                            <constraint firstItem="WwS-K6-eow" firstAttribute="trailing" secondItem="Pbg-NS-GSi" secondAttribute="trailing" constant="60" id="8rQ-kj-JpM"/>
+                            <constraint firstItem="WwS-K6-eow" firstAttribute="trailing" secondItem="Pbg-NS-GSi" secondAttribute="trailing" constant="70" id="8rQ-kj-JpM"/>
                             <constraint firstItem="WlR-hP-98w" firstAttribute="trailing" secondItem="WwS-K6-eow" secondAttribute="trailing" constant="-70" id="FBK-qK-sYG"/>
                             <constraint firstItem="WlR-hP-98w" firstAttribute="top" secondItem="jKi-P5-zPE" secondAttribute="bottom" constant="41" id="Hyk-Ag-ZRZ"/>
                             <constraint firstItem="WwS-K6-eow" firstAttribute="trailing" secondItem="jKi-P5-zPE" secondAttribute="trailing" constant="77" id="LgA-OM-b9Y"/>
                             <constraint firstItem="jKi-P5-zPE" firstAttribute="leading" secondItem="WwS-K6-eow" secondAttribute="leading" constant="76" id="UxK-SQ-svx"/>
-                            <constraint firstItem="Pbg-NS-GSi" firstAttribute="leading" secondItem="WwS-K6-eow" secondAttribute="leading" constant="60" id="kfW-pd-eQF"/>
+                            <constraint firstItem="Pbg-NS-GSi" firstAttribute="leading" secondItem="WwS-K6-eow" secondAttribute="leading" constant="70" id="kfW-pd-eQF"/>
                             <constraint firstItem="WwS-K6-eow" firstAttribute="bottom" secondItem="Pbg-NS-GSi" secondAttribute="bottom" constant="180" id="mcn-nc-gh5"/>
                             <constraint firstAttribute="bottomMargin" secondItem="jKi-P5-zPE" secondAttribute="bottom" constant="381" id="ttS-jC-M9x"/>
                             <constraint firstItem="jKi-P5-zPE" firstAttribute="top" secondItem="WwS-K6-eow" secondAttribute="top" constant="107" id="ug0-Bo-6WX"/>
@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5O-vZ-1R3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3891" y="345"/>
+            <point key="canvasLocation" x="3890.8396946564885" y="344.36619718309862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xJg-wg-ZpG">
@@ -172,7 +172,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
