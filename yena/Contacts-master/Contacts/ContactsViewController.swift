@@ -47,15 +47,15 @@ class ContactsViewController: UITableViewController {
 		detailViewController.delegate = self
 	}
 	
-	override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-		let favoriteAction = UITableViewRowAction(style: .default, title: "Favorite") { [weak self](_, indexPath) in
-			guard let favorite = self?.stateController?.contacts[indexPath.row] else {
-				return
-			}
-			self?.stateController?.favorites.append(favorite)
-		}
-		return [favoriteAction]
-	}
+//	override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//		let favoriteAction = UITableViewRowAction(style: .default, title: "Favorite") { [weak self](_, indexPath) in
+//			guard let favorite = self?.stateController?.contacts[indexPath.row] else {
+//				return
+//			}
+//			self?.stateController?.favorites.append(favorite)
+//		}
+//		return [favoriteAction]
+//	}
 }
 
 extension ContactsViewController: DetailViewControllerDelegate {
@@ -67,5 +67,5 @@ extension ContactsViewController: DetailViewControllerDelegate {
 class ContactCell: UITableViewCell {
 	@IBOutlet var photoImageView: UIImageView?
 	@IBOutlet var nameLabel: UILabel?
-	@IBOutlet var positionLabel: UILabel?
+	@IBOutlet var messageLabel: UILabel?
 }

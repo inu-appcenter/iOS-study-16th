@@ -11,8 +11,8 @@ import UIKit
 class EditContactViewController: UITableViewController {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var nameTextField: UITextField!
-	@IBOutlet weak var positionTextField: UITextField!
-	@IBOutlet weak var emailTextField: UITextField!
+	@IBOutlet weak var messageTextField: UITextField!
+	@IBOutlet weak var addressTextField: UITextField!
 	@IBOutlet weak var phoneTextField: UITextField!
 	
 	var contact: Contact?
@@ -21,18 +21,18 @@ class EditContactViewController: UITableViewController {
 		super.viewDidLoad()
 		imageView.image = contact?.image
 		nameTextField.text = contact?.name
-		positionTextField.text = contact?.position
-		emailTextField.text = contact?.address
+		messageTextField.text = contact?.message
+        addressTextField.text = contact?.address
 		phoneTextField.text = contact?.phone
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let photo = imageView.image,
+		if let image = imageView.image,
 		let name = nameTextField.text,
-		let position = positionTextField.text,
-		let address = = emailTextField.text,
+		let message = messageTextField.text,
+		let address = addressTextField.text,
 		let phone = phoneTextField.text {
-			contact = Contact.init(photo: photo, name: name, position: position, email: email, phone: phone)
+			contact = Contact.init(image: image, name: name, message: message, address: address, phone: phone)
 		}
 	}
 }
