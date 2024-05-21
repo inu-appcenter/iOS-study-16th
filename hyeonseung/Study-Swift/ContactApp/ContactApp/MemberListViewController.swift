@@ -7,10 +7,11 @@
 
 import UIKit
 
+// 싱글톤 패턴 -> 사용하여서 인스턴스 생성을 1개만 하도록.......
 var memberlist = [MemberData]()
 
 
-class ViewController: UIViewController {
+class MemberListViewController: UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
     
@@ -23,8 +24,8 @@ class ViewController: UIViewController {
         
         registerNib()
         
-        memberlist.append(MemberData(memberImage: "배트맨.png", memberNum: "1", memberName: "배트맨", memberAge: "20", memberTell: "010-1234-1234", memberAddress: "인천대학교"))
-        memberlist.append(MemberData(memberImage: "임꺽정.png", memberNum: "2", memberName: "임꺽정", memberAge: "20", memberTell: "010-1234-1234", memberAddress: "인천대학교"))
+        memberlist.append(MemberData(memberImage: UIImage(named: "배트맨"), memberNum: "1", memberName: "배트맨", memberAge: "20", memberTell: "010-1234-1234", memberAddress: "인천대학교"))
+        memberlist.append(MemberData(memberImage: UIImage(named: "임꺽정"), memberNum: "2", memberName: "임꺽정", memberAge: "20", memberTell: "010-1234-1234", memberAddress: "인천대학교"))
         
     }
     
@@ -46,26 +47,21 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate{
+extension MemberListViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memberlist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = listTableView.dequeueReusableCell(withIdentifier: MemberTableViewCell.identifier, for: indexPath) as! MemberTableViewCell
-        let member = memberlist[indexPath.row]
-        
-        if let imagePath = member.memberImage {
-                    let fileManager = FileManager.default
-                    let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-                    let documentsDirectory = urls[0]
-                    let imageURL = documentsDirectory.appendingPathComponent(imagePath)
-                    cell.memberImage.image = UIImage(contentsOfFile: imageURL.path)
-        } else {
-                cell.memberImage.image = UIImage(named: "defaultImage.png")
+        guard let cell = listTableView.dequeueReusableCell(withIdentifier: MemberTableViewCell.identifier, for: indexPath) as? MemberTableViewCell else {
+            return UITableViewCell()
         }
-        cell.memberImage.image = UIImage(named: member.memberImage!)
+     
+        let member = memberlist[indexPath.row]
+
+       
+        cell.memberImage.image = member.memberImage
         cell.memberName.text = member.memberName
         cell.memberAddress.text = member.memberAddress
         

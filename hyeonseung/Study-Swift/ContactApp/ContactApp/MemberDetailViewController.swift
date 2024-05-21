@@ -1,10 +1,10 @@
+////
+////  MemberDetailViewController.swift
+////  ContactApp
+////
+////  Created by 한현승 on 5/16/24.
+////
 //
-//  MemberDetailViewController.swift
-//  ContactApp
-//
-//  Created by 한현승 on 5/16/24.
-//
-
 import Foundation
 import UIKit
 
@@ -28,10 +28,13 @@ class MemberDetailViewController: UIViewController {
     
     var memberIndex: Int?
     var memberInfo: MemberData?
-    var selectedImage: UIImage?
+    @IBOutlet var selectedImage: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.imgBtn.layer.masksToBounds = true
+        self.imgBtn.layer.cornerRadius = self.imgBtn.frame.size.width / 2
         
         memberNum.text = "멤버번호: "
         memberName.text = "이     름: "
@@ -45,22 +48,15 @@ class MemberDetailViewController: UIViewController {
             ageTF?.text = info.memberAge
             telTF?.text = info.memberTell
             addressTF?.text = info.memberAddress
-            
+        
+            selectedImage?.image = info.memberImage
+            selectedImage?.layer.cornerRadius = (selectedImage?.frame.height)!/2
+            selectedImage?.clipsToBounds = true
+            selectedImage?.layer.borderWidth = 0
+            selectedImage?.contentMode = .scaleAspectFill
             // 이미지 버튼 설정
-            if let imagePath = info.memberImage {
-                let fileManager = FileManager.default
-                let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-                let documentsDirectory = urls[0]
-                let imageURL = documentsDirectory.appendingPathComponent(imagePath)
-                if let image = UIImage(contentsOfFile: imageURL.path) {
-                    imgBtn.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
-                } else {
-                    imgBtn.setImage(UIImage(named: "defaultImage.png"), for: .normal)
-                }
-            } else {
-                imgBtn.setImage(UIImage(named: "defaultImage.png"), for: .normal)
-            }
-            imgBtn.imageView?.contentMode = .scaleAspectFill
+            imgBtn.setImage(info.memberImage, for: .normal)
+            imgBtn.imageView?.contentMode = .scaleToFill
             imgBtn.clipsToBounds = true
             
         }
@@ -76,9 +72,8 @@ class MemberDetailViewController: UIViewController {
         let updatedTel = telTF.text ?? ""
         let updatedAddress = addressTF.text ?? ""
 
-        let updatedImageName = selectedImage == nil ? memberInfo?.memberImage ?? "defaultImage.png" : saveImageToDocuments(image: selectedImage!)
+        let updatedImageName = selectedImage?.image
 
-        
         // 배열에서 기존 멤버 정보 업데이트
         memberlist[index] = MemberData(memberImage: updatedImageName, memberNum: updatedNum, memberName: updatedName, memberAge: updatedAge, memberTell: updatedTel, memberAddress: updatedAddress)
               
@@ -86,19 +81,6 @@ class MemberDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func saveImageToDocuments(image: UIImage) -> String {
-        let fileManager = FileManager.default
-        let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = urls[0]
-        let imageName = UUID().uuidString + ".png"
-        let imageURL = documentsDirectory.appendingPathComponent(imageName)
-        
-        if let data = image.pngData() {
-            try? data.write(to: imageURL)
-        }
-        
-        return imageName
-    }
 }
 
 
@@ -113,9 +95,13 @@ extension MemberDetailViewController: UIImagePickerControllerDelegate, UINavigat
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
-            selectedImage = pickedImage
-            imgBtn.setImage(pickedImage.withRenderingMode(.alwaysOriginal), for: .normal)
-            imgBtn.imageView?.contentMode = .scaleAspectFill
+            selectedImage?.image = pickedImage
+            selectedImage?.layer.cornerRadius = (self.selectedImage?.frame.height)!/2
+            selectedImage?.clipsToBounds = true
+            selectedImage?.contentMode = .scaleToFill
+            
+            imgBtn.setImage(pickedImage, for: .normal)
+            imgBtn.imageView?.contentMode = .scaleToFill
             imgBtn.clipsToBounds = true
         }
         dismiss(animated: true, completion: nil)

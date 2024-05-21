@@ -19,7 +19,7 @@ class AddMemberViewController: UIViewController{
    
     @IBOutlet weak var imgBtn: UIButton!
     
-    var selectedImage: UIImage?
+    @IBOutlet var selectedImage: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,6 @@ class AddMemberViewController: UIViewController{
         self.imgBtn.layer.masksToBounds = true
         self.imgBtn.layer.cornerRadius = self.imgBtn.frame.size.width / 2
         self.imgBtn.layer.backgroundColor =  UIColor.lightGray.cgColor
-        self.imgBtn.setTitle("", for: .normal)
        
         self.imgPicker.delegate = self
 
@@ -36,7 +35,7 @@ class AddMemberViewController: UIViewController{
         memberAge.text = "나     이: "
         memberTel.text = "전화번호: "
         memberAddress.text = "주     소: "
-        
+    
         setupView()
         
     }
@@ -51,7 +50,6 @@ class AddMemberViewController: UIViewController{
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
-        // imagePicker.allowsEditing = true
         present(imagePicker, animated: true)
             
     }
@@ -65,8 +63,15 @@ class AddMemberViewController: UIViewController{
         let tel = telTF.text ?? ""
         let address = addressTF.text ?? ""
         
-        let imageName = selectedImage == nil ? "defaultImage" : saveImageToDocuments(image: selectedImage!)
-
+        if selectedImage?.image == nil {
+            let defaultImages = ["basic_profile", "basic_profile2"]
+            let randomIndex = Int(arc4random_uniform(UInt32(defaultImages.count)))
+            selectedImage?.image = UIImage(named: defaultImages[randomIndex])
+        }
+        
+        let imageName = selectedImage?.image
+        
+      
         let data = MemberData(memberImage: imageName, memberNum: num, memberName: name, memberAge: age, memberTell: tel, memberAddress: address)
         
         memberlist.append(data)
@@ -75,19 +80,7 @@ class AddMemberViewController: UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     
-    func saveImageToDocuments(image: UIImage) -> String {
-        let fileManager = FileManager.default
-           let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-           let documentsDirectory = urls[0]
-           let imageName = UUID().uuidString + ".png"
-           let imageURL = documentsDirectory.appendingPathComponent(imageName)
-           
-           if let data = image.pngData() {
-               try? data.write(to: imageURL)
-           }
-           
-           return imageName
-    }
+    
     
 }
 
@@ -96,12 +89,18 @@ extension AddMemberViewController:
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
-               selectedImage = pickedImage
-               imgBtn.setImage(pickedImage.withRenderingMode(.alwaysOriginal), for: .normal)
-                imgBtn.imageView?.contentMode = .scaleAspectFill
-                imgBtn.clipsToBounds = true
-           }
-           dismiss(animated: true, completion: nil)
+           
+            selectedImage?.image = pickedImage
+            selectedImage?.layer.cornerRadius = (self.selectedImage?.frame.height)!/2
+            selectedImage?.clipsToBounds = true
+            selectedImage?.contentMode = .scaleToFill
+            
+            imgBtn.setImage(pickedImage, for: .normal)
+            imgBtn.imageView?.contentMode = .scaleAspectFill
+            imgBtn.clipsToBounds = true
+        }
+        
+        dismiss(animated: true, completion: nil)
        }
   
     
@@ -109,4 +108,3 @@ extension AddMemberViewController:
        dismiss(animated: true, completion: nil)
    }
 }
-    

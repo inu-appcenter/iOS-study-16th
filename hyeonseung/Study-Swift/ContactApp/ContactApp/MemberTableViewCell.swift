@@ -17,7 +17,6 @@ class MemberTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,7 +25,7 @@ class MemberTableViewCell: UITableViewCell {
         memberImage.layer.cornerRadius = memberImage.frame.height/2
         memberImage.layer.borderWidth = 0
         memberImage.clipsToBounds = true
-        // Configure the view for the selected state
+        memberImage.contentMode = .scaleToFill
     }
     
 }

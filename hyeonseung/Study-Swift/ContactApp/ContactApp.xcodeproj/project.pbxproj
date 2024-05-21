@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B173F302BF5122700C9B07A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B173F2F2BF5122700C9B07A /* AppDelegate.swift */; };
 		8B173F322BF5122700C9B07A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B173F312BF5122700C9B07A /* SceneDelegate.swift */; };
-		8B173F342BF5122700C9B07A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B173F332BF5122700C9B07A /* ViewController.swift */; };
+		8B173F342BF5122700C9B07A /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B173F332BF5122700C9B07A /* MemberListViewController.swift */; };
 		8B173F372BF5122700C9B07A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8B173F362BF5122700C9B07A /* Base */; };
 		8B173F392BF5122800C9B07A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B173F382BF5122800C9B07A /* Assets.xcassets */; };
 		8B173F3C2BF5122800C9B07A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8B173F3B2BF5122800C9B07A /* Base */; };
@@ -25,13 +25,16 @@
 		8B173F5A2BF5BF7F00C9B07A /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B173F582BF5BF7F00C9B07A /* MemberTableViewCell.swift */; };
 		8B173F5B2BF5BF7F00C9B07A /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B173F592BF5BF7F00C9B07A /* MemberTableViewCell.xib */; };
 		8B6516F92BF5F06B005515B2 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6516F82BF5F06B005515B2 /* MemberDetailViewController.swift */; };
+		8BBC514F2BFC4D8D005EB184 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC514E2BFC4D8D005EB184 /* ImageFileManager.swift */; };
+		8BBC51522BFC8D91005EB184 /* basic_profile2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC51502BFC8D91005EB184 /* basic_profile2.jpeg */; };
+		8BBC51532BFC8D91005EB184 /* basic_profile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC51512BFC8D91005EB184 /* basic_profile.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B173F2C2BF5122700C9B07A /* ContactApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B173F2F2BF5122700C9B07A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B173F312BF5122700C9B07A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B173F332BF5122700C9B07A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B173F332BF5122700C9B07A /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 		8B173F362BF5122700C9B07A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B173F382BF5122800C9B07A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B173F3B2BF5122800C9B07A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +51,9 @@
 		8B173F582BF5BF7F00C9B07A /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		8B173F592BF5BF7F00C9B07A /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 		8B6516F82BF5F06B005515B2 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
+		8BBC514E2BFC4D8D005EB184 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
+		8BBC51502BFC8D91005EB184 /* basic_profile2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basic_profile2.jpeg; sourceTree = "<group>"; };
+		8BBC51512BFC8D91005EB184 /* basic_profile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basic_profile.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		8B173F232BF5122700C9B07A = {
 			isa = PBXGroup;
 			children = (
+				8BBC51502BFC8D91005EB184 /* basic_profile2.jpeg */,
 				8B173F2E2BF5122700C9B07A /* ContactApp */,
 				8B173F2D2BF5122700C9B07A /* Products */,
 			);
@@ -86,13 +93,15 @@
 				8B173F592BF5BF7F00C9B07A /* MemberTableViewCell.xib */,
 				8B173F452BF5340900C9B07A /* MemberData.swift */,
 				8B173F312BF5122700C9B07A /* SceneDelegate.swift */,
-				8B173F332BF5122700C9B07A /* ViewController.swift */,
+				8B173F332BF5122700C9B07A /* MemberListViewController.swift */,
 				8B173F352BF5122700C9B07A /* Main.storyboard */,
 				8B173F432BF530EB00C9B07A /* AddMemberViewController.swift */,
+				8BBC51512BFC8D91005EB184 /* basic_profile.jpeg */,
 				8B173F382BF5122800C9B07A /* Assets.xcassets */,
 				8B173F3A2BF5122800C9B07A /* LaunchScreen.storyboard */,
 				8B173F3D2BF5122800C9B07A /* Info.plist */,
 				8B173F4E2BF5358F00C9B07A /* Member_Images */,
+				8BBC514E2BFC4D8D005EB184 /* ImageFileManager.swift */,
 			);
 			path = ContactApp;
 			sourceTree = "<group>";
@@ -173,6 +182,7 @@
 				8B173F522BF5358F00C9B07A /* 임꺽정.png in Resources */,
 				8B173F552BF5358F00C9B07A /* 홍길동.png in Resources */,
 				8B173F392BF5122800C9B07A /* Assets.xcassets in Resources */,
+				8BBC51532BFC8D91005EB184 /* basic_profile.jpeg in Resources */,
 				8B173F4F2BF5358F00C9B07A /* 배트맨.png in Resources */,
 				8B173F542BF5358F00C9B07A /* 쿡.png in Resources */,
 				8B173F3C2BF5122800C9B07A /* Base in Resources */,
@@ -181,6 +191,7 @@
 				8B173F372BF5122700C9B07A /* Base in Resources */,
 				8B173F512BF5358F00C9B07A /* 스티브.png in Resources */,
 				8B173F502BF5358F00C9B07A /* 베조스.png in Resources */,
+				8BBC51522BFC8D91005EB184 /* basic_profile2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,10 +205,11 @@
 				8B173F442BF530EB00C9B07A /* AddMemberViewController.swift in Sources */,
 				8B173F5A2BF5BF7F00C9B07A /* MemberTableViewCell.swift in Sources */,
 				8B173F462BF5340900C9B07A /* MemberData.swift in Sources */,
-				8B173F342BF5122700C9B07A /* ViewController.swift in Sources */,
+				8B173F342BF5122700C9B07A /* MemberListViewController.swift in Sources */,
 				8B6516F92BF5F06B005515B2 /* MemberDetailViewController.swift in Sources */,
 				8B173F302BF5122700C9B07A /* AppDelegate.swift in Sources */,
 				8B173F322BF5122700C9B07A /* SceneDelegate.swift in Sources */,
+				8BBC514F2BFC4D8D005EB184 /* ImageFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
