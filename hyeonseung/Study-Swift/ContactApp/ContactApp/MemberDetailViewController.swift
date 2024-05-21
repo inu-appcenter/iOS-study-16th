@@ -27,7 +27,7 @@ class MemberDetailViewController: UIViewController {
     @IBOutlet weak var imgBtn: UIButton!
     
     var memberIndex: Int?
-    var memberInfo: MemberData?
+    let memberInfo = MemberManager.shared
     @IBOutlet var selectedImage: UIImageView?
     
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class MemberDetailViewController: UIViewController {
         memberTel.text = "전화번호: "
         memberAddress.text = "주     소: "
         
-        if let info = memberInfo {
+        if let index = memberIndex, let info = memberInfo.getMember(index: index){
             numTF?.text = info.memberNum
             nameTF?.text = info.memberName
             ageTF?.text = info.memberAge
@@ -74,10 +74,18 @@ class MemberDetailViewController: UIViewController {
 
         let updatedImageName = selectedImage?.image
 
-        // 배열에서 기존 멤버 정보 업데이트
-        memberlist[index] = MemberData(memberImage: updatedImageName, memberNum: updatedNum, memberName: updatedName, memberAge: updatedAge, memberTell: updatedTel, memberAddress: updatedAddress)
-              
-
+        var updateMember = memberInfo.getMember(index: index)
+        updateMember?.memberImage = updatedImageName
+        updateMember?.memberNum = updatedNum
+        updateMember?.memberName = updatedName
+        updateMember?.memberAge = updatedAge
+        updateMember?.memberTell = updatedTel
+        updateMember?.memberAddress = updatedAddress
+        
+        if let updateMember = updateMember {
+            memberInfo.updateMember(index: index, member: updateMember)
+        }
+   
         self.navigationController?.popViewController(animated: true)
     }
     

@@ -28,6 +28,7 @@
 		8BBC514F2BFC4D8D005EB184 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC514E2BFC4D8D005EB184 /* ImageFileManager.swift */; };
 		8BBC51522BFC8D91005EB184 /* basic_profile2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC51502BFC8D91005EB184 /* basic_profile2.jpeg */; };
 		8BBC51532BFC8D91005EB184 /* basic_profile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC51512BFC8D91005EB184 /* basic_profile.jpeg */; };
+		8BBC51552BFCDA3E005EB184 /* MemberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC51542BFCDA3E005EB184 /* MemberManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		8BBC514E2BFC4D8D005EB184 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		8BBC51502BFC8D91005EB184 /* basic_profile2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basic_profile2.jpeg; sourceTree = "<group>"; };
 		8BBC51512BFC8D91005EB184 /* basic_profile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basic_profile.jpeg; sourceTree = "<group>"; };
+		8BBC51542BFCDA3E005EB184 /* MemberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,6 @@
 		8B173F232BF5122700C9B07A = {
 			isa = PBXGroup;
 			children = (
-				8BBC51502BFC8D91005EB184 /* basic_profile2.jpeg */,
 				8B173F2E2BF5122700C9B07A /* ContactApp */,
 				8B173F2D2BF5122700C9B07A /* Products */,
 			);
@@ -87,6 +88,7 @@
 		8B173F2E2BF5122700C9B07A /* ContactApp */ = {
 			isa = PBXGroup;
 			children = (
+				8BBC51502BFC8D91005EB184 /* basic_profile2.jpeg */,
 				8B173F2F2BF5122700C9B07A /* AppDelegate.swift */,
 				8B173F582BF5BF7F00C9B07A /* MemberTableViewCell.swift */,
 				8B6516F82BF5F06B005515B2 /* MemberDetailViewController.swift */,
@@ -102,6 +104,7 @@
 				8B173F3D2BF5122800C9B07A /* Info.plist */,
 				8B173F4E2BF5358F00C9B07A /* Member_Images */,
 				8BBC514E2BFC4D8D005EB184 /* ImageFileManager.swift */,
+				8BBC51542BFCDA3E005EB184 /* MemberManager.swift */,
 			);
 			path = ContactApp;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				8B173F442BF530EB00C9B07A /* AddMemberViewController.swift in Sources */,
 				8B173F5A2BF5BF7F00C9B07A /* MemberTableViewCell.swift in Sources */,
 				8B173F462BF5340900C9B07A /* MemberData.swift in Sources */,
+				8BBC51552BFCDA3E005EB184 /* MemberManager.swift in Sources */,
 				8B173F342BF5122700C9B07A /* MemberListViewController.swift in Sources */,
 				8B6516F92BF5F06B005515B2 /* MemberDetailViewController.swift in Sources */,
 				8B173F302BF5122700C9B07A /* AppDelegate.swift in Sources */,

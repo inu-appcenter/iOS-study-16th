@@ -25,4 +25,7 @@ struct MemberData {
         self.memberTell = memberTell
         self.memberAddress = memberAddress
     }
+    
+    
+ 
 }

@@ -7,11 +7,10 @@
 
 import UIKit
 
-// 싱글톤 패턴 -> 사용하여서 인스턴스 생성을 1개만 하도록.......
-var memberlist = [MemberData]()
-
 
 class MemberListViewController: UIViewController {
+    
+    let memberlist = MemberManager.shared
     
     @IBOutlet weak var listTableView: UITableView!
     
@@ -23,10 +22,6 @@ class MemberListViewController: UIViewController {
         listTableView.dataSource = self
         
         registerNib()
-        
-        memberlist.append(MemberData(memberImage: UIImage(named: "배트맨"), memberNum: "1", memberName: "배트맨", memberAge: "20", memberTell: "010-1234-1234", memberAddress: "인천대학교"))
-        memberlist.append(MemberData(memberImage: UIImage(named: "임꺽정"), memberNum: "2", memberName: "임꺽정", memberAge: "20", memberTell: "010-1234-1234", memberAddress: "인천대학교"))
-        
     }
     
     private func registerNib() {
@@ -50,7 +45,7 @@ class MemberListViewController: UIViewController {
 extension MemberListViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memberlist.count
+        return memberlist.countMember()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,13 +53,12 @@ extension MemberListViewController: UITableViewDataSource, UITableViewDelegate{
             return UITableViewCell()
         }
      
-        let member = memberlist[indexPath.row]
-
-       
-        cell.memberImage.image = member.memberImage
-        cell.memberName.text = member.memberName
-        cell.memberAddress.text = member.memberAddress
-        
+        if  let member = memberlist.getMember(index: indexPath.row){
+            
+            cell.memberImage.image = member.memberImage
+            cell.memberName.text = member.memberName
+            cell.memberAddress.text = member.memberAddress
+        }
     
         return cell
     }
@@ -76,9 +70,8 @@ extension MemberListViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "MemberDetailViewController") as? MemberDetailViewController else {return}
+
         
-        let selectedMember = memberlist[indexPath.row]
-        detailVC.memberInfo = selectedMember
         detailVC.memberIndex = indexPath.row
         self.navigationController?.pushViewController(detailVC, animated: true)
     }

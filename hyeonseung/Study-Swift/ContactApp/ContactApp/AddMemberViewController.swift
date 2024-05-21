@@ -74,9 +74,9 @@ class AddMemberViewController: UIViewController{
       
         let data = MemberData(memberImage: imageName, memberNum: num, memberName: name, memberAge: age, memberTell: tel, memberAddress: address)
         
-        memberlist.append(data)
+        MemberManager.shared.addMember(data)
         
-        print("memberlist count: \(memberlist.count)")
+        print("memberlist count: \(MemberManager.shared.countMember())")
         self.navigationController?.popViewController(animated: true)
     }
     
