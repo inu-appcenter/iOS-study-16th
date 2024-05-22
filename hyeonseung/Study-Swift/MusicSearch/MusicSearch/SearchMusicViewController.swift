@@ -84,7 +84,7 @@ extension SearchMusicViewController:  UISearchBarDelegate, UISearchResultsUpdati
                 let itemsPerRow: CGFloat = 3
                 let totalSpacing = layout.minimumInteritemSpacing * (itemsPerRow - 1) + layout.sectionInset.left + layout.sectionInset.right
                 let width = (collectionView.frame.width - totalSpacing) / itemsPerRow
-              s
+              
                 layout.itemSize = CGSize(width: width, height: width)
             }
            
