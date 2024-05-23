@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MusicCollectionViewCell: UICollectionViewCell {
+final class MusicCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var musicImage: UIImageView!
     @IBOutlet weak var title: UILabel!

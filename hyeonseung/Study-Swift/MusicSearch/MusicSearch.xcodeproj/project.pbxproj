@@ -15,6 +15,8 @@
 		8BBC516F2BFD1A4E005EB184 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC516E2BFD1A4E005EB184 /* Base */; };
 		8BBC51772BFD1C52005EB184 /* MusicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC51762BFD1C52005EB184 /* MusicInfo.swift */; };
 		8BBC519F2BFDE36C005EB184 /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC519E2BFDE36C005EB184 /* MusicCollectionViewCell.swift */; };
+		8BBC51A12BFEF664005EB184 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC51A02BFEF664005EB184 /* SearchResultsViewController.swift */; };
+		8BBC51A32BFEFFCB005EB184 /* MusicImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC51A22BFEFFCA005EB184 /* MusicImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		8BBC51702BFD1A4E005EB184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BBC51762BFD1C52005EB184 /* MusicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
 		8BBC519E2BFDE36C005EB184 /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
+		8BBC51A02BFEF664005EB184 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		8BBC51A22BFEFFCA005EB184 /* MusicImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,10 @@
 			children = (
 				8BBC51622BFD1A4D005EB184 /* AppDelegate.swift */,
 				8BBC51642BFD1A4D005EB184 /* SceneDelegate.swift */,
+				8BBC51A02BFEF664005EB184 /* SearchResultsViewController.swift */,
 				8BBC519E2BFDE36C005EB184 /* MusicCollectionViewCell.swift */,
 				8BBC51762BFD1C52005EB184 /* MusicInfo.swift */,
+				8BBC51A22BFEFFCA005EB184 /* MusicImageCollectionViewCell.swift */,
 				8BBC51662BFD1A4D005EB184 /* SearchMusicViewController.swift */,
 				8BBC51682BFD1A4D005EB184 /* Main.storyboard */,
 				8BBC516B2BFD1A4E005EB184 /* Assets.xcassets */,
@@ -146,9 +152,11 @@
 			files = (
 				8BBC51672BFD1A4D005EB184 /* SearchMusicViewController.swift in Sources */,
 				8BBC51632BFD1A4D005EB184 /* AppDelegate.swift in Sources */,
+				8BBC51A32BFEFFCB005EB184 /* MusicImageCollectionViewCell.swift in Sources */,
 				8BBC51652BFD1A4D005EB184 /* SceneDelegate.swift in Sources */,
 				8BBC519F2BFDE36C005EB184 /* MusicCollectionViewCell.swift in Sources */,
 				8BBC51772BFD1C52005EB184 /* MusicInfo.swift in Sources */,
+				8BBC51A12BFEF664005EB184 /* SearchResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
