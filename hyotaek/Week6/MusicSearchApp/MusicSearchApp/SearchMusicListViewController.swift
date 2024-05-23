@@ -13,7 +13,11 @@ final class SearchMusicListViewController: UIViewController {
         registerXib()
         setUpSearchController()
         Task {
-            await setUpMusicList(searchTerm: "치즈")
+            do {
+                try await setUpMusicList(searchTerm: "치즈")
+            } catch {
+                print("Error 발생: \(error)")
+            }
         }
     }
     
@@ -43,7 +47,7 @@ final class SearchMusicListViewController: UIViewController {
         definesPresentationContext = true
     }
     
-    private func setUpMusicList(searchTerm: String) async {
+    private func setUpMusicList(searchTerm: String) async throws {
         guard let url = URL(string: "https://itunes.apple.com/search?media=music&term=\(searchTerm)") else { return }
         
         do {
@@ -65,16 +69,24 @@ extension SearchMusicListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else {
             Task {
-                await setUpMusicList(searchTerm: "치즈")
-                isSearching = false
-                collectionView.collectionViewLayout.invalidateLayout()
+                do {
+                    try await setUpMusicList(searchTerm: "치즈")
+                    isSearching = false
+                    collectionView.collectionViewLayout.invalidateLayout()
+                } catch {
+                    print("에러 발생: \(error)")
+                }
             }
             return
         }
         Task {
-            await setUpMusicList(searchTerm: searchText)
-            isSearching = true
-            collectionView.collectionViewLayout.invalidateLayout()
+            do {
+                try await setUpMusicList(searchTerm: searchText)
+                isSearching = true
+                collectionView.collectionViewLayout.invalidateLayout()
+            } catch {
+                print("에러 발생: \(error)")
+            }         
         }
     }
 }
