@@ -13,7 +13,9 @@ GET 방식으로 사용
 
 ## 시연 화면
 ### 영상
-<p align="center"><img src="https://github.com/inu-appcenter/iOS-study-16th/assets/109841880/d2475c25-e44f-4895-b00f-bd7136483d38" width="400" height="700"></p>
+
+https://github.com/inu-appcenter/iOS-study-16th/assets/109841880/db570ae2-72e8-400d-a99a-7b20476ef2e7
+
 ### 초기화면
 <p align="center"><img src="https://github.com/inu-appcenter/iOS-study-16th/assets/109841880/f2fd21de-2a88-46d9-a244-c94e623adf49" width="400" height="700"></p>
 
