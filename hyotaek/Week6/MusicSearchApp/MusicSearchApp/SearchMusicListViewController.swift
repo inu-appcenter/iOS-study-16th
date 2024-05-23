@@ -1,6 +1,6 @@
 import UIKit
 
-class SearchMusicListViewController: UIViewController {
+final class SearchMusicListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     var musicList = [MusicInfo]()
@@ -22,12 +22,12 @@ class SearchMusicListViewController: UIViewController {
         collectionView.register(nibName, forCellWithReuseIdentifier: MusicListCell.identifier)
     }
     
-    func setUpCollectionView() {
+    private func setUpCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
-    func setUpSearchController() {
+    private func setUpSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         
         searchController.searchResultsUpdater = self
@@ -43,7 +43,7 @@ class SearchMusicListViewController: UIViewController {
         definesPresentationContext = true
     }
     
-    func setUpMusicList(searchTerm: String) async {
+    private func setUpMusicList(searchTerm: String) async {
         guard let url = URL(string: "https://itunes.apple.com/search?media=music&term=\(searchTerm)") else { return }
         
         do {

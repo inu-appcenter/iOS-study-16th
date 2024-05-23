@@ -1,6 +1,6 @@
 import UIKit
 
-class MusicListCell: UICollectionViewCell {
+final class MusicListCell: UICollectionViewCell {
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var artworkUrl100: UIImageView!
@@ -11,7 +11,7 @@ class MusicListCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func configure(with musicInfo: MusicInfo) {
+    private func configure(with musicInfo: MusicInfo) {
         trackName.text = musicInfo.trackName
         artistName.text = musicInfo.artistName
         collectionName.text = musicInfo.collectionName ?? "nil"
