@@ -11,7 +11,7 @@ final class MusicListCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    private func configure(with musicInfo: MusicInfo) {
+    func configure(with musicInfo: MusicInfo) {
         trackName.text = musicInfo.trackName
         artistName.text = musicInfo.artistName
         collectionName.text = musicInfo.collectionName ?? "nil"
@@ -30,7 +30,7 @@ final class MusicListCell: UICollectionViewCell {
         return dateStr
     }
     
-    private func setImage(urlString: String) {
+    func setImage(urlString: String) {
         guard let url = URL(string: urlString) else {
             artworkUrl100.image = UIImage(named: "placeholder")
             return
