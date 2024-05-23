@@ -13,7 +13,7 @@ GET 방식으로 사용
 
 ## 시연 화면
 ### 영상
-<p align="center"><img src="https://github.com/inu-appcenter/iOS-study-16th/assets/109841880/f765ddb5-b2cc-4286-881b-2665aebcb4c6" width="400" height="700"></p>
+<p align="center"><img src="https://github.com/inu-appcenter/iOS-study-16th/assets/109841880/d2475c25-e44f-4895-b00f-bd7136483d38" width="400" height="700"></p>
 ### 초기화면
 <p align="center"><img src="https://github.com/inu-appcenter/iOS-study-16th/assets/109841880/f2fd21de-2a88-46d9-a244-c94e623adf49" width="400" height="700"></p>
 
