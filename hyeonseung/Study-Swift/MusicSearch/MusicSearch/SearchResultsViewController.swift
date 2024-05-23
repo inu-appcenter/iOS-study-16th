@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchResultsViewController: UIViewController {
+final class SearchResultsViewController: UIViewController {
 
     var musicData: [Music] = []
     
@@ -74,4 +74,10 @@ extension SearchResultsViewController: UICollectionViewDataSource, UICollectionV
     
     
     
+}
+
+extension MusicImageCollectionViewCell {
+    static var identifier: String{
+        return String(describing: self)
+    }
 }

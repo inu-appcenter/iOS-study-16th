@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchMusicViewController: UIViewController {
+final class SearchMusicViewController: UIViewController {
     
     var musicData: [Music] = []
     var searchController = UISearchController(searchResultsController: nil)
@@ -128,4 +128,11 @@ extension SearchMusicViewController: UICollectionViewDataSource,  UICollectionVi
     }
     
 
+}
+
+
+extension MusicCollectionViewCell {
+    static var identifier: String{
+        return String(describing: self)
+    }
 }

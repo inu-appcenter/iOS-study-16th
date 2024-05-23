@@ -36,17 +36,15 @@ final class MusicCollectionViewCell: UICollectionViewCell {
         Task{
             if let url = URL(string: music.artworkUrl100){
                 let (data, _) = try await URLSession.shared.data(from: url)
-                let image = UIImage(data: data)
-                musicImage.image = image
+                DispatchQueue.main.async {
+                    guard let image = UIImage(data: data) else {return}
+                    self.musicImage.image = image
+                }
             }
+                
         }
         
     }
     
 }
 
-extension MusicCollectionViewCell {
-    static var identifier: String{
-        return String(describing: self)
-    }
-}
